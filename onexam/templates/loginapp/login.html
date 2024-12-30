@@ -1,0 +1,39 @@
+<style>
+    form
+    {
+        font-size: large;
+        margin-left: 600px;
+        margin-top: 100px;
+    }
+    marquee
+    {
+        margin-top: 100px;
+        text-wrap-style: balance;
+        text-shadow: 0 0 20px;
+        color: darkmagenta;
+        font-size: xx-large;
+        
+    }
+    
+</style>
+<marquee>
+    Welcome To our Login Page, Please Enter Valid Username/ Password.
+</marquee>
+<form>
+        
+    {% csrf_token %}
+    
+    
+    <input type="text" name="username" placeholder="Enter Username"> <br><br>
+
+    <input type="password" name="password" placeholder="Enter Password"> <br><br>
+
+
+    <input type="submit" value="sign in" formaction="/loginapp/login/" formmethod="post">
+    
+    <input type="submit" value="sign up" formaction="/loginapp/saveUser/" formmethod="get">
+    
+    
+</form>
+
+<span style="color: blueviolet;">  {{message}} </span>

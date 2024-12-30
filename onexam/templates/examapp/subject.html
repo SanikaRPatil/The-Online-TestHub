@@ -1,0 +1,37 @@
+<style>
+    form
+    {
+        margin-top: 100px;
+        margin-left: 600px;
+    }
+    
+</style>
+<head>
+    
+    {% load static %}
+
+</head>
+<form>
+
+    <select name="subject">
+            {% for dictionary in listofdictionary%}
+                {% for key,value in dictionary.items %}
+                    <option>{{value}}</option>
+                {% endfor %}
+            {% endfor %}  
+
+    </select>
+    <br><br>
+    <img src="{% static imagepath %}" width="100",height="100"><br><br>
+    <details>
+        <summary>
+            Click And Read More Information.
+        </summary>
+        <p>
+            In this test total 5 Questions and Please check All Question Answer Selected Or Not And Submit The Test.
+            All The Best!
+        </p>
+    </details>
+    <input type="submit" value="Start Test" formaction="/examapp/startTest/" formmethod="get"> 
+
+</form>
